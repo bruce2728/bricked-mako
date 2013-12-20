@@ -950,8 +950,10 @@ int bdi_writeback_thread(void *data)
 	 * Our parent may run at a different priority, just set us to normal
 	 */
 	set_user_nice(current, 0);
-
-	trace_writeback_thread_start(bdi);
+		/* This trace causes an ICE in gcc4.7
+		 * For more information look into this commits message.
+		 * trace_writeback_thread_start(bdi);
+		 */
 
 	while (!kthread_freezable_should_stop(NULL)) {
 		/*
