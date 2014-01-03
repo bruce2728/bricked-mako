@@ -35,15 +35,12 @@
 #include "msm_watchdog.h"
 #include "timer.h"
 
-<<<<<<< HEAD
-=======
 #ifdef CONFIG_KEXEC_HARDBOOT
 #include <asm/kexec.h>
 #endif
 
 extern unsigned get_cable_status(void);
 
->>>>>>> 5591c31... Implement kexec-hardboot
 #define WDT0_RST	0x38
 #define WDT0_EN		0x40
 #define WDT0_BARK_TIME	0x4C
